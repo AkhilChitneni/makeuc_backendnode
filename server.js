@@ -11,6 +11,7 @@ const { Server } = require("socket.io");
 
 
 const app = express();
+const port = process.env.PORT || 3000
 const server = http.createServer(app);
 const io = new Server(server);
 var mongoose = require('mongoose');
@@ -37,7 +38,7 @@ mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
 
 
     
-      app.listen(3000, () => console.log('Example app is listening on port 3000.'));
+      app.listen(port, () => console.log('Example app is listening on port: ',port));
 })
 ;
 
